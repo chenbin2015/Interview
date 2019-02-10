@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getMaxLetter(str) {
+        let obj = {}
+        for (let i = 0; i < str.length; i++) {
+          if (obj[str[i]]) {
+            obj[str[i]]++
+          } else {
+            obj[str[i]] = 1
+          }
+        }
+        let result = {
+          letter: '',
+          count: 0
+        }
+        for (var item in obj) {
+          if (obj[item] > result.count) {
+            result.letter = item
+            result.count = obj[item]
+          }
+        }
+        return result
+      }
+      let r1 = getMaxLetter('中国我爱你，是嘛？你真的爱我吗？是的，真的爱你，是的')
+
+      console.log(r1)
+    </script>
+  </body>
+</html>
